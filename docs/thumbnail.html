@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Fin-Guard ZeroBaran — Thumbnail</title>
+<style>
+  :root{--bg:#070b14;--panel:#0e1524;--line:#1d2740;--fg:#e8edf7;--muted:#8b97b3;
+        --accent:#5b8cff;--good:#3ddc84;--bad:#ff6b6b;--warn:#f7c948}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:700px;height:700px;overflow:hidden}
+  body{background:radial-gradient(700px 420px at 88% -8%,#16233f 0%,var(--bg) 62%);
+       color:var(--fg);direction:rtl;
+       font:16px/1.6 -apple-system,"Segoe UI",Tahoma,"Noto Sans Arabic",sans-serif;
+       display:flex;flex-direction:column;justify-content:space-between;padding:44px 46px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .logo{width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,#1f6feb,#5b8cff);
+        display:flex;align-items:center;justify-content:center;font-size:28px}
+  .name{font-size:34px;font-weight:800;letter-spacing:-.6px}
+  .tag{color:var(--muted);font-size:15.5px;margin-top:2px}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+  .card .l{color:var(--muted);font-size:14px}
+  .card .v{font-size:27px;font-weight:800;letter-spacing:-.5px;margin-top:4px}
+  .good{color:var(--good)}.bad{color:var(--bad)}.warn{color:var(--warn)}
+  .bars{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 20px 14px}
+  .bars .t{color:var(--muted);font-size:14px;margin-bottom:10px}
+  .row{display:flex;align-items:center;gap:12px;margin-bottom:9px}
+  .row .n{width:132px;font-size:14.5px;color:#cfd8ee}
+  .track{flex:1;height:12px;background:#131c2e;border-radius:999px;overflow:hidden}
+  .fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#2f6bff,#5b8cff)}
+  .row .p{width:66px;text-align:left;font-size:13.5px;color:var(--muted);direction:ltr}
+  .chips{display:flex;gap:9px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:#0c1322;border-radius:999px;
+        padding:6px 13px;font-size:13.5px;color:#b9c4dd}
+  .chip.hot{border-color:#5a2530;background:#1c0f16;color:#ff9aa6}
+  .foot{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13.5px}
+  .foot b{color:#dbe3f5}
+</style>
+</head>
+<body>
+  <div>
+    <div class="brand">
+      <div class="logo">🧾</div>
+      <div>
+        <div class="name">Fin-Guard ZeroBaran</div>
+        <div class="tag">المنظومة الذاتية الذكية لإدارة الحسابات والفواتير والتدقيق المالي</div>
+      </div>
+    </div>
+
+    <div class="chips" style="margin-top:20px">
+      <span class="chip">مجاني بالكامل · $0 اشتراكات</span>
+      <span class="chip">يعمل محلياً وبلا إنترنت</span>
+      <span class="chip">عربي · إنجليزي · تركي</span>
+      <span class="chip hot">كشف الفواتير المكرّرة</span>
+    </div>
+  </div>
+
+  <div class="kpis">
+    <div class="card"><div class="l">الإيرادات (USD)</div><div class="v good">18,319.50</div></div>
+    <div class="card"><div class="l">المصروفات (USD)</div><div class="v bad">18,258.05</div></div>
+    <div class="card"><div class="l">ضريبة قابلة للخصم</div><div class="v warn">948.14</div></div>
+  </div>
+
+  <div class="bars">
+    <div class="t">📊 المصروفات حسب التصنيف</div>
+    <div class="row"><span class="n">تسويق وإعلانات</span><span class="track"><span class="fill" style="width:86%"></span></span><span class="p">4,540</span></div>
+    <div class="row"><span class="n">خدمات مهنية</span><span class="track"><span class="fill" style="width:74%"></span></span><span class="p">6,345</span></div>
+    <div class="row"><span class="n">إيجارات ومرافق</span><span class="track"><span class="fill" style="width:58%"></span></span><span class="p">4,232</span></div>
+    <div class="row"><span class="n">استضافة وتقنية</span><span class="track"><span class="fill" style="width:22%"></span></span><span class="p">899</span></div>
+    <div class="row" style="margin-bottom:0"><span class="n">صحة وتأمين</span><span class="track"><span class="fill" style="width:15%"></span></span><span class="p">540</span></div>
+  </div>
+
+  <div class="foot">
+    <span>OCR محلي · دفتر قيد مزدوج · تقارير HTML/CSV · تنبيهات تليجرام</span>
+    <span><b>MIT © 2026 Baran Avisat</b></span>
+  </div>
+</body>
+</html>
