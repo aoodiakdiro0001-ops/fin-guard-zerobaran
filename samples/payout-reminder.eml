@@ -1,0 +1,19 @@
+From: billing@marketplace.example
+To: owner@example.com
+Subject: Payment received — payout #PO-77120
+Date: Fri, 08 May 2026 09:14:22 +0000
+Content-Type: text/plain; charset="utf-8"
+
+Hello,
+
+We have released your payout.
+
+  Payout reference: PO-77120
+  Period:            2026-04-24 → 2026-05-06
+  Gross sales:       2,410.00 USD
+  Platform fee:      120.50 USD
+  Net payout:        2,289.50 USD
+
+Funds will arrive on your bank account within 2 business days.
+
+— Marketplace Billing

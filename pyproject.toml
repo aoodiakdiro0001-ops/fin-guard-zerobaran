@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fin-guard-zerobaran"
+version = "1.0.0"
+description = "Fin-Guard ZeroBaran — منظومة إدارة الحسابات، الفواتير، والتدقيق المالي الذاتية (محلية، خالية بالكامل من التكلفة)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Baran Avisat" }]
+keywords = [
+  "accounting",
+  "invoice-ocr",
+  "expense-tracking",
+  "bookkeeping",
+  "financial-audit",
+  "double-entry",
+  "arabic",
+  "turkish",
+]
+dependencies = []
+
+[project.optional-dependencies]
+pdf = ["PyMuPDF>=1.24"]
+ocr = ["pytesseract>=0.3.10", "Pillow>=10.0"]
+dashboard = ["streamlit>=1.30"]
+ai = ["google-generativeai>=0.5"]
+sync = ["supabase>=2.4"]
+all = [
+  "PyMuPDF>=1.24",
+  "pytesseract>=0.3.10",
+  "Pillow>=10.0",
+  "streamlit>=1.30",
+  "google-generativeai>=0.5",
+  "supabase>=2.4",
+]
+
+[project.scripts]
+finguard = "finguard.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/aoodiakdiro0001-ops/fin-guard-zerobaran"
+Support = "https://github.com/aoodiakdiro0001-ops/fin-guard-zerobaran/blob/main/SUPPORT.md"
+
+[tool.setuptools]
+packages = ["finguard"]

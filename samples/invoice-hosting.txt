@@ -1,0 +1,12 @@
+Invoice #: INV-2026-0417
+Date: 2026-04-03
+From: Cloud Harbor Hosting Ltd.
+
+Hosting — Business Plan (monthly)          48.00
+Domain renewal — example.com               12.00
+SSL certificate                            9.00
+Subtotal                                   69.00
+VAT 20%                                   13.80
+TOTAL USD                                 82.80
+
+Payment due within 14 days.

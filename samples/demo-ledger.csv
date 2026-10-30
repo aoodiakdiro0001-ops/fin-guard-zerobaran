@@ -1,0 +1,34 @@
+date,vendor,description,category,amount,tax,currency,kind
+2026-03-04,Vertex Cloud,Servers and object storage monthly,استضافة وتقنية,240.00,40.00,USD,expense
+2026-03-06,Nova Ads Agency,Spring campaign setup,تسويق وإعلانات,900.00,150.00,USD,expense
+2026-03-11,Design Studio Freelance,Landing page design,خدمات مهنية,600.00,0,USD,expense
+2026-03-15,Stripe Payout,Client payments received,إيرادات,4200.00,0,USD,income
+2026-03-18,Coffee Corner Team,Team meeting refreshments,أخرى,46.50,0,USD,expense
+2026-03-22,GitHub Team,Source control seats,برمجيات واشتراكات,84.00,14.00,USD,expense
+2026-03-29,Office Rent LLC,April office rent,إيجارات ومرافق,1200.00,0,USD,expense
+2026-04-02,Vertex Cloud,Servers and object storage monthly,استضافة وتقنية,240.00,40.00,USD,expense
+2026-04-03,Nova Ads Agency,April retainer,تسويق وإعلانات,900.00,150.00,USD,expense
+2026-04-05,Accounting Partners,Quarterly bookkeeping,خدمات مهنية,350.00,0,USD,expense
+2026-04-08,Stripe Payout,Client payments received,إيرادات,5100.00,0,USD,income
+2026-04-12,Mega Print House,Brochures and business cards,تسويق وإعلانات,180.00,30.00,USD,expense
+2026-04-14,Coworking Space,Hot desk seats,إيجارات ومرافق,260.00,0,USD,expense
+2026-04-19,Flight Tickets,Client onsite visit,مواصلات وشحن,415.00,0,USD,expense
+2026-04-21,Coursera Team,Team upskilling plan,تعليم وتدريب,199.00,0,USD,expense
+2026-04-26,Insurance Mutual,Quarterly liability cover,صحة وتأمين,540.00,0,USD,expense
+2026-04-29,Office Rent LLC,May office rent,إيجارات ومرافق,1200.00,0,USD,expense
+2026-05-01,Vertex Cloud,Servers and object storage monthly,استضافة وتقنية,240.00,40.00,USD,expense
+2026-05-02,Stripe Payout,Client payments received,إيرادات,4750.00,0,USD,income
+2026-05-03,Nova Ads Agency,May retainer,تسويق وإعلانات,900.00,150.00,USD,expense
+2026-05-05,Nova Ads Agency,May retainer,تسويق وإعلانات,900.00,150.00,USD,expense
+2026-05-06,Tax Authority,Quarterly filing fee,ضرائب ورسوم,220.00,0,USD,expense
+2026-05-09,Curso Online,Data analytics course,تعليم وتدريب,89.00,0,USD,expense
+2026-05-10,Digital Ocean Droplets,Staging environment,استضافة وتقنية,96.00,0,USD,expense
+2026-05-13,Courier Express,Equipment delivery,مواصلات وشحن,38.75,0,USD,expense
+2026-05-16,Freelance Copywriter,Blog articles x4,خدمات مهنية,320.00,0,USD,expense
+2026-05-19,Coworking Space,Hot desk seats,إيجارات ومرافق,260.00,0,USD,expense
+2026-05-21,Security Audit Partners,Annual pen-test,خدمات مهنية,4800.00,0,USD,expense
+2026-05-23,Stripe Payout,Client payments received,إيرادات,1980.00,0,USD,income
+2026-05-25,Hardware Store,Monitors and keyboards,مشتريات ومخزون,610.00,0,USD,expense
+2026-05-27,Office Rent LLC,June office rent,إيجارات ومرافق,1200.00,0,USD,expense
+2026-05-28,Mobile Operator,Team phone lines,إيجارات ومرافق,112.00,18.67,USD,expense
+2026-05-30,Nova Ads Agency,Extra campaign burst,تسويق وإعلانات,760.00,126.67,USD,expense

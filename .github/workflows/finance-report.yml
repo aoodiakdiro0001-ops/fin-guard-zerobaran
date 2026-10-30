@@ -1,0 +1,84 @@
+name: Finance Report
+
+# ① تقرير مالي أسبوعي آلي — كل اثنين 06:00 UTC
+# ② تشغيل يدوي من تبويب Actions بأي مجلد استقبال
+# ③ عند إضافة فواتير إلى finance/inbox داخل المستودع
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: "مجلد الفواتير داخل المستودع"
+        required: false
+        default: "finance/inbox"
+  push:
+    branches: [main]
+    paths:
+      - "finance/inbox/**"
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # التصحيح الطباعي + الأرقام المحلية من Flask/Streamlit — مجاني بالكامل
+      - name: Install free OCR engine (Tesseract)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq tesseract-ocr tesseract-ocr-ar
+          tesseract --version
+
+      - name: Install Fin-Guard
+        run: python -m pip install --quiet -e .
+
+      - name: Collect invoices from the repository
+        run: |
+          mkdir -p finance/inbox
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            FOLDER="${{ github.event.inputs.folder }}"
+          else
+            FOLDER="finance/inbox"
+          fi
+          echo "Scanning folder: $FOLDER"
+          if [ -d "$FOLDER" ]; then find "$FOLDER" -type f | head -100; fi
+
+      - name: Run the full pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          BASE_CURRENCY: ${{ secrets.BASE_CURRENCY || 'USD' }}
+        run: |
+          set -o pipefail
+          python -m finguard init
+          python -m finguard doctor
+          python -m finguard ingest finance/inbox
+          python -m finguard report
+          if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+            python -m finguard send || true
+          fi
+
+      - name: Upload financial artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: fin-guard-report-${{ github.run_number }}
+          path: |
+            reports/
+            finance/
+          if-no-files-found: warn
+          retention-days: 30

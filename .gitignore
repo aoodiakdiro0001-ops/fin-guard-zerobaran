@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+reports/
+finance/inbox/
+finance/*.csv
+budget.json
+.DS_Store
+build/
+dist/
