@@ -37,7 +37,7 @@ jobs:
       - name: Install free OCR engine (Tesseract)
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq tesseract-ocr tesseract-ocr-ar
+          sudo apt-get install -y -qq tesseract-ocr tesseract-ocr-ara
           tesseract --version
 
       - name: Install Fin-Guard
@@ -67,7 +67,13 @@ jobs:
           set -o pipefail
           python -m finguard init
           python -m finguard doctor
-          python -m finguard ingest finance/inbox
+          if [ -n "$(find finance/inbox -type f ! -name README.txt -print -quit 2>/dev/null)" ]; then
+            echo "Reading invoices from finance/inbox"
+            python -m finguard ingest finance/inbox
+          else
+            echo "No invoices in finance/inbox — running the bundled samples instead"
+            python -m finguard ingest samples --budget budget.example.json
+          fi
           python -m finguard report
           if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
             python -m finguard send || true
